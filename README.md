@@ -64,3 +64,9 @@ public/data/candidatos.json   # gerado por npm run data
 public/fotos/                 # gerado por npm run data
 scripts/build_data.py         # download e tratamento dos dados do TSE
 ```
+
+## Me dê um cafézinho
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M212BC7C)
+
+### Chave Pix
+falcao.eveline@gmail.com

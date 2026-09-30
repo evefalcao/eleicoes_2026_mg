@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candidatos 2026 · MG</title>
+  <meta name="description" content="Todos os candidatos às eleições de 2026 em Minas Gerais — presidente, governador, senador, deputados federais e estaduais — e onde seus partidos se posicionam no espectro político.">
+</head>
+<body>
+  <header class="topo">
+    <div class="wrap">
+      <p class="kicker">Eleições 2026 · 1º turno em <span id="data-eleicao">4 de outubro</span></p>
+      <h1>Quem está na urna em Minas Gerais</h1>
+      <p class="lede">Todas as candidaturas registradas no TSE para presidente, governador, senador, deputado federal e deputado estadual, e onde o partido de cada uma se posiciona no espectro político.</p>
+    </div>
+  </header>
+
+  <nav class="abas" aria-label="Cargo">
+    <div class="wrap abas-inner" role="tablist" id="abas"></div>
+  </nav>
+
+  <main class="wrap">
+    <section class="painel" aria-labelledby="titulo-espectro">
+      <div class="painel-cab">
+        <div>
+          <h2 id="titulo-espectro">Onde os partidos se posicionam</h2>
+          <p class="sub" id="sub-espectro"></p>
+        </div>
+        <button class="link" type="button" id="btn-metodo">Como classificamos?</button>
+      </div>
+      <div id="espectro" class="espectro" role="img"></div>
+      <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+    </section>
+
+    <section aria-label="Filtros" class="filtros" id="filtros">
+      <label class="campo busca">
+        <span class="sr">Buscar</span>
+        <input type="search" id="f-busca" placeholder="Buscar por nome ou número" autocomplete="off">
+      </label>
+      <label class="campo"><span class="rot">Partido</span><select id="f-partido"></select></label>
+      <label class="campo"><span class="rot">Espectro</span><select id="f-faixa"></select></label>
+      <label class="campo"><span class="rot">Gênero</span><select id="f-genero"></select></label>
+      <label class="campo"><span class="rot">Ordenar</span>
+        <select id="f-ordem">
+          <option value="espectro">Espectro (esq. → dir.)</option>
+          <option value="nome">Nome</option>
+          <option value="numero">Número</option>
+          <option value="idade">Idade</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="f-inativos"> Incluir renúncias, indeferidos e cancelados</label>
+    </section>
+
+    <div class="resumo" aria-live="polite">
+      <p id="contagem"></p>
+      <button class="link" type="button" id="btn-limpar" hidden>Limpar filtros</button>
+    </div>
+
+    <section id="grade" class="grade" aria-label="Candidaturas"></section>
+    <div class="mais"><button type="button" id="btn-mais" class="botao" hidden></button></div>
+
+    <section class="painel metodo" id="metodo" aria-labelledby="titulo-metodo">
+      <h2 id="titulo-metodo">Como os partidos foram classificados</h2>
+      <p>A posição de cada partido vem do survey com cientistas políticos publicado por <a href="https://www.scielo.br/j/op/a/hv8GBg9hfCCZLwcWktfYhtC/" target="_blank" rel="noopener">Bolognesi, Ribeiro, Codato &amp; Silva (<i>Opinião Pública</i>, 2026)</a>. Os especialistas deram a cada legenda uma nota de 0 (extrema esquerda) a 10 (extrema direita), e usamos a média de 2022, a mais recente disponível. As faixas seguem os cortes do próprio artigo. O estudo mostra que, em 2022, nenhum partido ficou no centro: por isso essa faixa aparece vazia.</p>
+      <p>Alguns partidos mudaram desde a pesquisa. Quando a legenda só trocou de nome, repetimos a nota antiga. Quando surgiu de uma fusão, usamos a média dos partidos de origem. Só o Missão não tem avaliação acadêmica: sua posição é uma estimativa nossa e aparece com contorno tracejado. A nota é do partido, não da pessoa candidata, e federações e coligações reúnem partidos de posições diferentes.</p>
+      <div class="tabela-wrap">
+        <table class="tabela" id="tabela-partidos">
+          <thead>
+            <tr><th scope="col">Partido</th><th scope="col" class="num">Nota</th><th scope="col">Faixa</th><th scope="col">Origem da nota</th><th scope="col" class="num">Candidaturas<br><span id="th-cargo"></span></th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap">
+      <p>Dados e fotos: <a href="https://dadosabertos.tse.jus.br/dataset/candidatos-2026" target="_blank" rel="noopener">Portal de Dados Abertos do TSE</a>, extraídos em <span id="gerado-em"></span>. Presidente com abrangência nacional; demais cargos em Minas Gerais. A situação das candidaturas muda até a eleição: consulte o TSE para a informação oficial.</p>
+    </div>
+  </footer>
+
+  <dialog id="detalhe" class="detalhe" aria-labelledby="det-nome">
+    <div class="det-conteudo" id="det-conteudo"></div>
+  </dialog>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

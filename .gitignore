@@ -1,0 +1,5 @@
+node_modules/
+dist/
+# Downloads brutos do TSE (recriados por scripts/build_data.py)
+raw/
+.DS_Store

@@ -1,0 +1,21 @@
+{
+  "name": "eleicoes-2026",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Candidatos às eleições 2026 em Minas Gerais e a posição de seus partidos no espectro político.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "data": "python3 scripts/build_data.py",
+    "data:refresh": "python3 scripts/build_data.py --refresh"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/fraunces": "^5.3.0"
+  }
+}
